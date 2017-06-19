@@ -79,7 +79,7 @@ body{
 
 
 
-.block{
+.log-block, .reg-block{
 	position: absolute;
 	top: 35%;
 	display: none;

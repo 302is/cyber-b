@@ -2,15 +2,21 @@ $(window).ready(function(){
     
 	var login = $(".login"),
 			reg = $(".reg"),
-			block = $(".block"),
+			logBlock = $(".log-block"),
+			regBlock = $(".reg-block"),
 			backdoor = $(".backdoor");
 			
 	login.on("click", function(){
-		block.css("display","flex")
+		logBlock.css("display","flex")
+	})
+
+    reg.on("click", function(){
+		regBlock.css("display","flex")
 	})
 	
 	backdoor.on("click", function(){
-		block.css("display","none");
+		regBlock.css("display","none");
+		logBlock.css("display","none");
 		$("input[name='login']").val("");
 		$("input[name='password']").val("");
 	})
