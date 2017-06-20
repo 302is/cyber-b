@@ -1,19 +1,25 @@
-body{
+* {
+	font-family: Arial;
 	margin: 0;
 	padding: 0;
-	background: #ccc;
+}
+body{
+	background: #383838;
 }
 .wrap{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
+h1,h2,h3,h4,h5,h6 {
+	color: #FF8C00;
+}
 
-/*********************/
-/****    H E A D E R    ****/
+/**********************/
+/**** H E A D E R ****/
 /********************/
 .header{
-	background: url("../img/bg.jpg") no-repeat gray;
+	background: url("../img/bg.jpg") no-repeat #383838;
 	background-size: 100%;
 	height: 40%;
 	padding-top:40px;
@@ -33,12 +39,18 @@ body{
 .nav a{
 	text-decoration: none;
 	color: #fff;
+	border-right:3px solid #272822;
+	border-top: 3px solid #272822;
+	border-bottom: 3px solid #272822;
+}
+.nav a:first-child {
+	border-left:3px solid #272822;
 }
 .nav a:hover{
-	background: orange;
+	background: #FF8C00;
 }
 .nav-item{
-	background: green;
+	background: #383838;
 	padding: 10px 20px;
 	margin: 0; 
 	line-height:16px;
@@ -60,28 +72,106 @@ body{
 	filter: brightness(50%);
 }
 
-/*********************/
-/***     C O N T E N T   ***/
+/**********************/
+/*** C O N T E N T ***/
 /********************/
 
 .content{
-	background: #202020;
-	min-height: 800px;
+	background: #383838;
+	min-height: 960px;
+	margin-top:20px;
+}
+.block1, .block2 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top:50px;
+}
+.block1 .slider, .block1 .box {
+	background: red;
+}
+.block1 .slider {
+	width:600px;
+	height:300px;
+	margin-right:40px;
+}
+.block1 .box {
+	width:300px;
+	height:300px;
+	background:#0A0A0A;
+}
+.block1 .box h2{
+	text-align: center;
+	padding-top:35px;
+}
+.block2 .box1, .block2 .box2, .block2 .box3 {
+	background: red;
+}
+.block2 .box1 {
+	width:450px;
+	height:450px;	
+	margin-right:40px;
+}
+.block2 .box2 {
+	width:450px;
+	height:450px;	
+}
+.block2 .box2 .margin {
+	width:450px;
+	height:30px;
+	background: #383838;
+}
+.block2 .box3 {
+	width:450px;
+	height:260px;	
+}
+.block2 .box3 h2{
+	position: absolute;
+	padding:20px;
+	font-size:30px;
+}
+.block2 .box3 img{
+	width:450px;
+	height:260px;	
+}
+/***********************/
+/******* F I X  *******/
+/*********************/
+@media screen and (max-width: 920px) {
+	.block1 .slider, .block2 .box1 {
+		margin:10px;
+	}
+	.block1 .box {
+		margin-top:20px;
+	}
+	.block2 .box2, .block2 .box3 {
+		display:none;
+	}
 }
 
-/*********************/
-/****    F O O T E R    ****/
+/**********************/
+/**** F O O T E R ****/
 /********************/
 .footer{
-	background: green;
+	background: #272822;
 	min-height: 100px;
 }
 
 
-
-.log-block, .reg-block{
+/***********************/
+/**** LOGIN and REG ****/
+/*********************/
+.log-block{
 	position: absolute;
 	top: 35%;
+	display: none;
+	justify-content: center;
+	width: 100%;
+}
+.reg-block {
+	position: absolute;
+	top: 30%;
 	display: none;
 	justify-content: center;
 	width: 100%;
@@ -98,6 +188,18 @@ body{
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+	height: 30px;
+	margin-bottom: 20px;
+	padding-left:20px;
+	font-size: 18px;
+}
+.forma input[type="submit"] {
+	padding:20px;
+	background: #383838;
+	color: #fff;
+	font-size: 18px;
+	cursor: pointer;
+	border: 0;
 }
 .backdoor{
 	position: fixed;

@@ -18,7 +18,9 @@ $(window).ready(function(){
 		regBlock.css("display","none");
 		logBlock.css("display","none");
 		$("input[name='login']").val("");
+		$("input[name='email']").val("");
 		$("input[name='password']").val("");
+		$("input[name='password1']").val("");
 	})
     
 })
