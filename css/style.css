@@ -86,58 +86,7 @@ a {
 	min-height: 960px;
 	width:100%;
 	margin-top:20px;
-}
-/********************/
-/***** B E T S *****/
-/******************/
-.bets {
-	width:960px;
-	margin:0 auto;
-	background: #0A0A0A;
-	height:70px;
-	margin-bottom:40px;
-}
-.bets li {
-	list-style:none;
-	float:left;
-	color: #fff;
-	text-align:center;
-	padding-top:25px;
-	border-right:1px solid #252525;
-}
-.bets img {
-	width:50px;
-	position:absolute;
-	margin-top:-10px;
-	margin-left:-20px;
-}
-.bets img:first-child {
-	margin-left:-50px;
-}
-.bets img:last-child {
-	margin-left:0;
-}
-.bets .time {
-	width:150px;
-}
-.bets .kef1 {
-	width:120px;
-}
-.bets .teams {
-	width:500px;
-}
-.bets .kef2 {
-	width:120px;
-}
-.bets .go {
-	width:65px;
-	background: #FFA71B;
-	height:44px;
-}
-.bets .go a{
-	width:65px;
-	height:44px;
-	display: inline-block;
+	opacity: 0.7;
 }
 /********************/
 /**** I N D E X ****/
