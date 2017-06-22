@@ -44,8 +44,9 @@
 		
 
 	</div>
-	
+	<?php include_once("components/logreg.php") ?>
 </div>
 		
 		
+	
 <?php include_once("components/footer.php") ?>		

@@ -26,14 +26,14 @@
 				<?php
 					if(!$_SESSION['users']) {
 					echo '
-					<a class="nav-item login" href="auth">Вход</a>
-					<a class="nav-item reg" href="signup">Регистрация</a>
+					<a class="nav-item login" href="#!">Вход</a>
+					<a class="nav-item reg" href="#!">Регистрация</a>
 					';
 					}
 					else {
 					echo '
-					<a class="nav-item login" href="profile?id='.$_SESSION['users']['id'].'">'.$_SESSION['users']['name'].' | Счет : '.$_SESSION['users']['bank'].'тг</a>
-					<a class="nav-item reg" href="index.php?exit=1">Выйти</a>
+					<a class="nav-item" href="profile?id='.$_SESSION['users']['id'].'">'.$_SESSION['users']['name'].' | Счет : '.$_SESSION['users']['bank'].'тг</a>
+					<a class="nav-item" href="index.php?exit=1">Выйти</a>
 					';
 					}
 					
@@ -41,9 +41,7 @@
 						unset($_SESSION['users']);
 						echo '<meta http-equiv="refresh" content="0;index.php">';
 					}
-					
 				?>
-
 			</div>
 			<div class="category">
 				<a href="game?name=csgo"><img src="img/csgo.png" alt=""></a>

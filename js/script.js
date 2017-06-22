@@ -25,7 +25,15 @@ $(window).ready(function(){
 		$("input[name='email']").val("");
 		$("input[name='password']").val("");
 		$("input[name='password1']").val("");
+		$(".error").html("");
 	})
+	
+	$(document).keyup(function (e) {
+		if(e.which == 13 && logBlock.css("display") !== "none") 
+			submit.click();
+		if(e.which == 13 && regBlock.css("display") !== "none") 
+			submit.click();		
+	});
 		
 	submit.click(function(){
 		var login = $("input[name='login']").val(),
@@ -37,14 +45,15 @@ $(window).ready(function(){
 				login: login, 
 				password: password
 			},
-			url: "../lib/check.php",
+			url: "../check.php",
 			success: function(data){
 				$(".error").html(data)
 			}
 		})
 		
 	})
-		
+	
+	
 	//To store timeout id
 	$('#play').hide();
 	var timeoutId;
