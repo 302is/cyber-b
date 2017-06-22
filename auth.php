@@ -1,6 +1,5 @@
 <?php include_once("lib/db.php") ?>
 <?php 
-	
 	if (empty($_POST['login'])) {
 		echo "<p>Введите логин</p>";
 	}

@@ -5,7 +5,8 @@ $(window).ready(function(){
 			logBlock = $(".log-block"),
 			regBlock = $(".reg-block"),
 			backdoor = $(".backdoor"),
-			submit = $("input[type='button']");
+			logSubmit = $("input[name='log']"),
+			regSubmit = $("input[name='reg']");
 			
 	login.on("click", function(){
 		backdoor.fadeIn("slow");
@@ -22,6 +23,7 @@ $(window).ready(function(){
 		logBlock.fadeOut("fast");;
 		backdoor.fadeOut("slow");
 		$("input[name='login']").val("");
+		$("input[name='name']").val("");
 		$("input[name='email']").val("");
 		$("input[name='password']").val("");
 		$("input[name='password1']").val("");
@@ -30,12 +32,12 @@ $(window).ready(function(){
 	
 	$(document).keyup(function (e) {
 		if(e.which == 13 && logBlock.css("display") !== "none") 
-			submit.click();
+			logSubmit.click();
 		if(e.which == 13 && regBlock.css("display") !== "none") 
-			submit.click();		
+			regSubmit.click();		
 	});
 		
-	submit.click(function(){
+	logSubmit.click(function(){
 		var login = $("input[name='login']").val(),
 			password = $("input[name='password']").val();
 	
@@ -45,7 +47,31 @@ $(window).ready(function(){
 				login: login, 
 				password: password
 			},
-			url: "../check.php",
+			url: "../auth.php",
+			success: function(data){
+				$(".error").html(data)
+			}
+		})
+		
+	})
+	
+	regSubmit.click(function(){
+		var name = $("input[name='name']").val(),
+			email = $("input[name='email']").val(),
+			login = $("input[name='login']").val(),
+			password = $("input[name='password']").val(),
+			password1 = $("input[name='password1']").val();
+	
+		$.ajax({
+			type: "POST",
+			data: {
+				name: name, 
+				email: email,
+				login: login,
+				password: password,
+				password1: password1
+			},
+			url: "../reg.php",
 			success: function(data){
 				$(".error").html(data)
 			}
