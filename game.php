@@ -37,5 +37,4 @@
 			</ul>			
 		</div>
 		
-<?php include_once("components/logreg.php") ?>
 <?php include_once("components/footer.php") ?>	

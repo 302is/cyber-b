@@ -1,3 +1,4 @@
+<?php include_once("lib/db.php");?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,6 @@
 	<meta name="viewport" content="width=device-width" />
 </head>
 <body>
-	<div class="wrap">
 	
   <!-- ***************** --> 
   <!----- H E A D E R -----> 
@@ -23,13 +23,32 @@
 				<a class="nav-item" href="#!">Результаты</a>
 				<a class="nav-item" href="#!">LIVE</a>
 				<a class="nav-item" href="#!">Партнеры</a>
-				<a class="nav-item login" href="#!">Вход</a>
-				<a class="nav-item reg" href="#!">Регистрация</a>
+				<?php
+					if(!$_SESSION['users']) {
+					echo '
+					<a class="nav-item login" href="auth">Вход</a>
+					<a class="nav-item reg" href="signup">Регистрация</a>
+					';
+					}
+					else {
+					echo '
+					<a class="nav-item login" href="profile?id='.$_SESSION['users']['id'].'">'.$_SESSION['users']['name'].' | Счет : '.$_SESSION['users']['bank'].'тг</a>
+					<a class="nav-item reg" href="index.php?exit=1">Выйти</a>
+					';
+					}
+					
+					if($_GET['exit']==1) {
+						unset($_SESSION['users']);
+						echo '<meta http-equiv="refresh" content="0;index.php">';
+					}
+					
+				?>
+
 			</div>
 			<div class="category">
 				<a href="game?name=csgo"><img src="img/csgo.png" alt=""></a>
 				<a href="game?name=dota2"><img src="img/dota2.png" alt=""></a>
-				<a href="game?name=ow"><img src="img/ow.png" alt=""></a>
+				<a href="game?name=ow"><img src="img/ow.png"alt=""></a>
 				<a href="game?name=wot"><img src="img/wot.png" alt=""></a>
 			</div>
 		</div>
