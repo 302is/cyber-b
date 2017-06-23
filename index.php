@@ -1,7 +1,9 @@
 <?php include_once("components/header.php") ?>
+
 <!-- ***************** --> 
 <!---- C O N T E N T ----> 
 <!-- ***************** --> 
+<div class="wrapper">
 <div class="content">
 	<div class="block1">
 		<div class="slider">
@@ -45,7 +47,10 @@
 
 	</div>
 </div>
-		
-		
-	
+
+<?php include_once("game.php") ?>	
+</div>	
+				
 <?php include_once("components/footer.php") ?>		
+		
+

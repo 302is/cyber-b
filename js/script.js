@@ -79,7 +79,11 @@ $(window).ready(function(){
 		})
 		
 	})
+
 	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	//To store timeout id
 	$('#play').hide();
@@ -160,6 +164,68 @@ $(window).ready(function(){
 	   $('#pause').show();    
 	});
 
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	
+	var csgo = $("img[src='img/csgo.png']"),
+		ow = $("img[src='img/ow.png']"),
+		wot = $("img[src='img/wot.png']"),
+		dota = $("img[src='img/dota2.png']");
+	
+	csgo.click(function(){
+		window.location.hash = "csgo";
+	});
+	
+	dota.click(function(){
+		window.location.hash = "dota2";
+	});
+	
+	ow.click(function(){
+		window.location.hash = "ow";
+	});
+	
+	wot.click(function(){
+		window.location.hash = "wot";
+	});
+	
+	var app = $.sammy(function() {
+		this.get('index', function() {
+			$('.content').css("display","block");
+			$('.game').css("display","none");
+			
+		});
+		this.get('csgo', function() {
+			$('.content').css("display","none");
+			$('.game').css("display","block");
+			
+			$.ajax({
+				type: "POST",
+				data: {
+					game: "csgo"
+				},
+				url: "../game.php"
+			});
+			
+		});
+		this.get('dota2', function() {
+			$('.content').css("display","none");
+			$('.game').css("display","block");
+		});
+		this.get('ow', function() {
+			$('.content').css("display","none");
+			$('.game').css("display","block");
+		});
+		this.get('wot', function() {
+			$('.content').css("display","none");
+			$('.game').css("display","block");
+		});
+	});
+	app.run();
+	
+	
+	
 	
 });

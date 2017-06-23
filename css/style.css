@@ -60,20 +60,25 @@ a {
 	flex-wrap: wrap;
 	justify-content: center;
 }
-.category a{
-	margin: 60px 40px;
-}
 .category img{
+	margin: 60px 40px;
 	width: 130px;
-}
-.category a:hover{
+	height: 130px;
 	filter: brightness(50%);
 }
 
 /**********************/
 /*** C O N T E N T ***/
 /********************/
-
+.game{
+	display: none;
+	min-height: 960px;
+	background: #383838;
+	padding-top: 40px;
+	min-height: 1200px;
+	height: 100%;
+    margin: 0 auto -150px;
+}
 .content{
 	min-height: 960px;
 	background: #383838;

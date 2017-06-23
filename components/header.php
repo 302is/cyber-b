@@ -44,10 +44,10 @@
 				?>
 			</div>
 			<div class="category">
-				<a href="game?name=csgo"><img src="img/csgo.png" alt=""></a>
-				<a href="game?name=dota2"><img src="img/dota2.png" alt=""></a>
-				<a href="game?name=ow"><img src="img/ow.png"alt=""></a>
-				<a href="game?name=wot"><img src="img/wot.png" alt=""></a>
+				<img src="img/csgo.png" alt="">
+				<img src="img/dota2.png" alt="">
+				<img src="img/ow.png"alt="">
+				<img src="img/wot.png" alt="">
 			</div>
 		</div>
 		
