@@ -44,7 +44,6 @@
 		
 
 	</div>
-	<?php include_once("components/logreg.php") ?>
 </div>
 		
 		

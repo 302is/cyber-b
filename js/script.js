@@ -27,6 +27,7 @@ $(window).ready(function(){
 		$("input[name='email']").val("");
 		$("input[name='password']").val("");
 		$("input[name='password1']").val("");
+		$("input[name='password2']").val("");
 		$(".error").html("");
 	})
 	
@@ -58,18 +59,18 @@ $(window).ready(function(){
 	regSubmit.click(function(){
 		var name = $("input[name='name']").val(),
 			email = $("input[name='email']").val(),
-			login = $("input[name='login']").val(),
-			password = $("input[name='password']").val(),
-			password1 = $("input[name='password1']").val();
+			login1 = $("input[name='login1']").val(),
+			password1 = $("input[name='password1']").val(),
+			password2 = $("input[name='password2']").val();
 	
 		$.ajax({
 			type: "POST",
 			data: {
 				name: name, 
 				email: email,
-				login: login,
-				password: password,
-				password1: password1
+				login1: login1,
+				password1: password1,
+				password2: password2
 			},
 			url: "../reg.php",
 			success: function(data){

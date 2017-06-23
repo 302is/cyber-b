@@ -113,10 +113,10 @@ a {
 	margin-left:-20px;
 }
 .bets img:first-child {
-	margin-left:-50px;
+	margin-left:-60px;
 }
 .bets img:last-child {
-	margin-left:0;
+	margin-left:10px;
 }
 .bets .time {
 	width:150px;
