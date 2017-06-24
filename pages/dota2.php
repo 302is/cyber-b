@@ -3,11 +3,9 @@
   <!-- ***************** --> 
   <div class="game">
 		<?php 
-			global $conn;
-			
-			echo "dota2";
+			include_once "../lib/config.php";
+			$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		
-		/*
 			$query = mysqli_query($conn, "SELECT * FROM matches 
 				LEFT JOIN tournament ON matches.id_tournament=tournament.id
 				LEFT JOIN games ON games.game_id=tournament.game_id
@@ -34,8 +32,7 @@
 					</ul>
 				';
 			};
-	
-			*/
+			
 		?>
 		
 	</div>

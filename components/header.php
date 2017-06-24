@@ -7,6 +7,7 @@
 	<title>Cyber-B | Ставки на киберспорт</title>
 	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width" />
+	<script src="js/jquery.js"></script>	
 </head>
 <body>
 	
@@ -33,20 +34,20 @@
 					elseif($_SESSION['users']['role_id'] == 1){
 					echo '
 					<a class="nav-item" href="profile?id='.$_SESSION['users']['id'].'">'.$_SESSION['users']['name'].' | Счет : '.$_SESSION['users']['bank'].'тг</a>
-					<a class="nav-item" href="adminPanel.php">Админ-панель</a>
-					<a class="nav-item" href="index.php?exit=1">Выйти</a>
+					<a class="nav-item" href="pages/adminPanel">Админ-панель</a>
+					<a class="nav-item" href="index?exit=1">Выйти</a>
 					';
 					}
 					else {
 					echo '
 					<a class="nav-item" href="profile?id='.$_SESSION['users']['id'].'">'.$_SESSION['users']['name'].' | Счет : '.$_SESSION['users']['bank'].'тг</a>
-					<a class="nav-item" href="index.php?exit=1">Выйти</a>
+					<a class="nav-item" href="index?exit=1">Выйти</a>
 					';
 					}
 					
 					if($_GET['exit']==1) {
 						unset($_SESSION['users']);
-						echo '<meta http-equiv="refresh" content="0;index.php">';
+						echo '<meta http-equiv="refresh" content="0;index">';
 					}
 				?>
 			</div>

@@ -5,7 +5,7 @@ $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 if (!$conn) {
     echo "No connection database!";
     exit();
-    }
+}
 function fetchAll($sql){
     global $conn;
     $arr = [];

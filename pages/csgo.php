@@ -1,13 +1,11 @@
-  <!-- ***************** --> 
-  <!---- C O N T E N T ----> 
-  <!-- ***************** --> 
+  <!-- ********************** --> 
+  <!---- G A M E _ M A T C H E S ---> 
+  <!-- ********************** --> 
   <div class="game">
 		<?php 
-			global $conn;
+			include_once "../lib/config.php";
+			$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			
-			echo "csgo";
-			
-			/*
 			$query = mysqli_query($conn, "SELECT * FROM matches 
 					LEFT JOIN tournament ON matches.id_tournament=tournament.id
 					LEFT JOIN games ON games.game_id=tournament.game_id
@@ -33,7 +31,8 @@
 						<li class="go"><a href="#!">+</a></li>
 					</ul>
 				';
-			};*/
+			};
+			
 		?>
 		
 	</div>

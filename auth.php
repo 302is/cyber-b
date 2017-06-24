@@ -17,7 +17,7 @@
 		if(mysqli_num_rows($query)>0) {
 			$res =  mysqli_fetch_assoc($query);
 			$_SESSION['users']=$res;
-			echo '<meta http-equiv="refresh" content="0;index.php">';
+			echo '<meta http-equiv="refresh" content="0;index">';
 		}else {
 			echo '<p>Логин или пароль был введен неправильно<p>';
 		}
