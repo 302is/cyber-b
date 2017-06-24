@@ -30,6 +30,13 @@
 					<a class="nav-item reg" href="#!">Регистрация</a>
 					';
 					}
+					elseif($_SESSION['users']['role_id'] == 1){
+					echo '
+					<a class="nav-item" href="profile?id='.$_SESSION['users']['id'].'">'.$_SESSION['users']['name'].' | Счет : '.$_SESSION['users']['bank'].'тг</a>
+					<a class="nav-item" href="adminPanel.php">Админ-панель</a>
+					<a class="nav-item" href="index.php?exit=1">Выйти</a>
+					';
+					}
 					else {
 					echo '
 					<a class="nav-item" href="profile?id='.$_SESSION['users']['id'].'">'.$_SESSION['users']['name'].' | Счет : '.$_SESSION['users']['bank'].'тг</a>

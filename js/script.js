@@ -1,4 +1,4 @@
-$(window).ready(function(){
+$(document).ready(function(){
     
 	var login = $(".login"),
 			reg = $(".reg"),
@@ -169,63 +169,23 @@ $(window).ready(function(){
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	$(".wrapper").load("home");
 	
-	var csgo = $("img[src='img/csgo.png']"),
-		ow = $("img[src='img/ow.png']"),
-		wot = $("img[src='img/wot.png']"),
-		dota = $("img[src='img/dota2.png']");
-	
-	csgo.click(function(){
-		window.location.hash = "csgo";
+	$("a[href='index']").click(function(){
+		$(".wrapper").load("home");
+		return false;
 	});
 	
-	dota.click(function(){
-		window.location.hash = "dota2";
-	});
-	
-	ow.click(function(){
-		window.location.hash = "ow";
-	});
-	
-	wot.click(function(){
-		window.location.hash = "wot";
-	});
-	
-	var app = $.sammy(function() {
-		this.get('index', function() {
-			$('.content').css("display","block");
-			$('.game').css("display","none");
+	$(".category img").click(function(){
+		var page = $(this).attr('src'),
+			reImg = page.replace('img/',''),
+			rePng = reImg.replace('.png','');
 			
-		});
-		this.get('csgo', function() {
-			$('.content').css("display","none");
-			$('.game').css("display","block");
-			
-			$.ajax({
-				type: "POST",
-				data: {
-					game: "csgo"
-				},
-				url: "../game.php"
-			});
-			
-		});
-		this.get('dota2', function() {
-			$('.content').css("display","none");
-			$('.game').css("display","block");
-		});
-		this.get('ow', function() {
-			$('.content').css("display","none");
-			$('.game').css("display","block");
-		});
-		this.get('wot', function() {
-			$('.content').css("display","none");
-			$('.game').css("display","block");
-		});
+			$(".wrapper").load('pages/' + rePng);
+			return false;
+		
+		
 	});
-	app.run();
 	
-	
-	
-	
+
 });

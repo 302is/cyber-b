@@ -18,8 +18,8 @@ a {
 /**** H E A D E R ****/
 /********************/
 .header{
-	background: url("../img/bg2.jpg");
-	background-size: cover; 
+	background: url("../img/bg.jpg");
+	background-size: cover;
 	min-height: 45%;
 	padding-top:40px;
 }
@@ -70,22 +70,13 @@ a {
 /**********************/
 /*** C O N T E N T ***/
 /********************/
-.game{
-	display: none;
+.wrapper{
 	min-height: 960px;
-	background: #383838;
+	background: url("../img/content.png");
 	padding-top: 40px;
 	min-height: 1200px;
 	height: 100%;
-    margin: 0 auto -150px;
-}
-.content{
-	min-height: 960px;
-	background: #383838;
-	padding-top: 40px;
-	min-height: 1200px;
-	height: 100%;
-    margin: 0 auto -150px;
+    margin: 0 auto -100px;
 }
 @media screen and (max-width: 1000px) {
 	.content{
@@ -281,9 +272,9 @@ a {
 /**** F O O T E R ****/
 /********************/
 .footer{
-	background: url("../img/background.jpg") no-repeat #383838;
-	background-size: 100%;
-	min-height: 150px;
+	background: url("../img/footer.jpg") no-repeat #383838;
+	background-size: cover;
+	min-height: 100px;
 }
 
 
