@@ -72,7 +72,7 @@ a {
 /**********************/
 /*** C O N T E N T ***/
 /********************/
-.wrapper{
+.wrapper, .content{
 	min-height: 960px;
 	background: url("../img/content.png");
 	padding-top: 40px;
@@ -80,10 +80,25 @@ a {
 	height: 100%;
     margin: 0 auto -100px;
 }
-@media screen and (max-width: 1000px) {
-	.content{
-		height: 1800px;
-	}
+.wrap {
+	margin:0 auto;
+	width:700px;
+}
+.wrap h2 {
+	font-size:30px;
+}
+.wrap label, .wrap span {
+	color:#fff;
+	font-size:20px;
+}
+.wrap input[type="radio"] {
+	margin-left:20px;
+}
+.wrap input[type="text"],.wrap input[type="submit"] {
+	height:25px;
+}
+.wrap .error {
+	color:red;
 }
 /********************/
 /***** G A M E *****/

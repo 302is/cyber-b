@@ -44,5 +44,85 @@
 
 	</div>
 </div>	
+<script>	
+	//To store timeout id
+	$('#play').hide();
+	var timeoutId;
+
+	var slideImage = function( step ) {
+		
+		if ( step == undefined ) step = 1;
+		
+		//Clear timeout if any
+		clearTimeout ( timeoutId );
+		
+		//Get current image's index
+		var indx = $('.item:visible').index('.item');
+		
+		//If step == 0, we don't need to do any fadein our fadeout
+		if ( step != 0 ) {
+		   //Fadeout this item
+		   $('.item:visible').fadeOut();
+		}
+		
+		//Increment for next item
+		indx = indx + step ;
+		
+		//Check bounds for next item
+		if ( indx >= $('.item').length ) {
+			indx = 0;
+		} else if ( indx < 0 ) {
+			indx = $('.item').length - 1;
+		}
+		
+		//If step == 0, we don't need to do any fadein our fadeout
+		if ( step != 0 ) {
+		   //Fadein next item
+		   $('.item:eq(' + indx + ')').fadeIn();
+		}
+		
+		//Set Itmeout
+		timeoutId = setTimeout ( slideImage, 5000 );
+	};
+
+	//Start sliding
+	slideImage(0);
+
+	//When clicked on prev
+	$('body #prev').click(function() {
+
+		//slideImage with step = -1
+		slideImage ( -1 );   
+	});
+	   
+	//When clicked on next
+	$('body #next').click(function() {
+			
+		 //slideImage with step = 1
+		 slideImage ( 1 );
+	});
+					 
+	//When clicked on Pause
+	$('body #pause').click(function() {
+
+	   //Clear timeout
+	   clearTimeout ( timeoutId );    
+		
+		//Hide Pause and show Play
+		$(this).hide();
+		$('body #play').show();
+	});
+
+	//When clicked on Play
+	$('body #play').click(function() {
+	   
+	   //Start slide image
+	   slideImage(0);
+
+	   //Hide Play and show Pause
+	   $(this).hide();
+	   $('body #pause').show();    
+	});
+</script>
 		
 

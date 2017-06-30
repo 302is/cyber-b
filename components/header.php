@@ -20,7 +20,7 @@
 			</div>
 			<div class="nav">
 				<a class="nav-item" href="index">Главная</a>
-				<a class="nav-item" href="#!">Ставки</a>
+				<a class="nav-item" href="#!">LIVE</a>
 				<a class="nav-item" href="#!">Результаты</a>
 				<a class="nav-item" href="#!">LIVE</a>
 				<a class="nav-item" href="#!">Партнеры</a>
@@ -33,14 +33,14 @@
 					}
 					elseif($_SESSION['users']['role_id'] == 1){
 					echo '
-					<a class="nav-item" href="profile?id='.$_SESSION['users']['id'].'">'.$_SESSION['users']['name'].' | Счет : '.$_SESSION['users']['bank'].'тг</a>
+					<a class="nav-item" href="profile">'.$_SESSION['users']['name'].' | Счет : '.$_SESSION['users']['bank'].'тг</a>
 					<a class="nav-item" href="pages/adminPanel">Админ-панель</a>
 					<a class="nav-item" href="index?exit=1">Выйти</a>
 					';
 					}
 					else {
 					echo '
-					<a class="nav-item" href="profile?id='.$_SESSION['users']['id'].'">'.$_SESSION['users']['name'].' | Счет : '.$_SESSION['users']['bank'].'тг</a>
+					<a class="nav-item" href="profile">'.$_SESSION['users']['name'].' | Счет : '.$_SESSION['users']['bank'].'тг</a>
 					<a class="nav-item" href="index?exit=1">Выйти</a>
 					';
 					}
